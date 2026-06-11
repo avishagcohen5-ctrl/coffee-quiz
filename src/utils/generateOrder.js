@@ -11,8 +11,10 @@ export function generateOrder() {
   const size = pick(type.sizes)
   const cup = pick(type.cups)
 
+  const broken = Math.random() < 0.15
+
   const roll = Math.random()
-  const strength = roll < 0.25 ? 'חזק' : roll < 0.5 ? 'חלש' : null
+  const strength = broken ? null : (roll < 0.25 ? 'חזק' : roll < 0.5 ? 'חלש' : null)
 
   return {
     coffeeType: type.name,
@@ -24,7 +26,7 @@ export function generateOrder() {
     strength,
     waterBase: Math.random() < 0.2,
     decaf: Math.random() < 0.15,
-    broken: Math.random() < 0.15,
+    broken,
     milk: Math.random() < 0.4 ? pick(MILKS) : null,
   }
 }

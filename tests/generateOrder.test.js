@@ -58,6 +58,15 @@ describe('generateOrder', () => {
     }
   })
 
+  it('מפורק אף פעם לא מגיע עם חזק/חלש (200 samples)', () => {
+    for (let i = 0; i < 200; i++) {
+      const order = generateOrder()
+      if (order.broken) {
+        expect(order.strength).toBeNull()
+      }
+    }
+  })
+
   it('waterBase, decaf, broken are booleans', () => {
     const order = generateOrder()
     expect(typeof order.waterBase).toBe('boolean')
