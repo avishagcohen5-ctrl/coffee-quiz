@@ -182,7 +182,7 @@ body {
   font-family: 'Heebo', sans-serif;
   font-weight: 700;
   cursor: pointer;
-  border: none;
+  border: 1.5px solid #111;
   background: #f0ede8;
   color: #555;
   transition: opacity 0.15s, transform 0.1s;
