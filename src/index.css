@@ -86,7 +86,7 @@ body {
 
 .home-btn--secondary {
   background: #f0ede8;
-  color: #555;
+  color: #111;
   border: 1.5px solid #111;
 }
 
@@ -185,7 +185,7 @@ body {
   cursor: pointer;
   border: 1.5px solid #111;
   background: #f0ede8;
-  color: #555;
+  color: #111;
   transition: opacity 0.15s, transform 0.1s;
 }
 
