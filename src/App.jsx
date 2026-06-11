@@ -1,10 +1,13 @@
 import { useState } from 'react'
+import HomeScreen from './components/HomeScreen.jsx'
+import RefreshScreen from './components/RefreshScreen.jsx'
 import Bon from './components/Bon.jsx'
 import AnswerButtons from './components/AnswerButtons.jsx'
 import { generateOrder } from './utils/generateOrder.js'
 import { getCorrectPortion } from './utils/getCorrectPortion.js'
 
 export default function App() {
+  const [screen, setScreen] = useState('home') // 'home' | 'refresh' | 'quiz'
   const [order, setOrder] = useState(() => generateOrder())
   const [answered, setAnswered] = useState(null)
 
@@ -16,6 +19,28 @@ export default function App() {
       setOrder(generateOrder())
       setAnswered(null)
     }, 1500)
+  }
+
+  if (screen === 'home') {
+    return (
+      <div className="app">
+        <HomeScreen
+          onStart={() => setScreen('quiz')}
+          onRefresh={() => setScreen('refresh')}
+        />
+      </div>
+    )
+  }
+
+  if (screen === 'refresh') {
+    return (
+      <div className="app">
+        <RefreshScreen
+          onStart={() => setScreen('quiz')}
+          onBack={() => setScreen('home')}
+        />
+      </div>
+    )
   }
 
   return (
