@@ -29,8 +29,7 @@ body {
 /* ── Bon ── */
 
 .bon {
-  flex: 1;
-  padding: 28px 22px 24px;
+  padding: 28px 22px 32px;
 }
 
 .bon-label {

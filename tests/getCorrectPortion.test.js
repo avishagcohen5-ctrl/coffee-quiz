@@ -72,6 +72,20 @@ describe('getCorrectPortion', () => {
       .toBe('2 מנות קצרות')
   })
 
+  // --- מפורק תמיד מנה ארוכה ---
+  it('מפורק — הפוך גדול TA חזק → מנה ארוכה (מבטל חוזק וכוס)', () => {
+    expect(getCorrectPortion({ category: 'hot', size: 'גדול', cup: 'TA', strength: 'חזק', broken: true }))
+      .toBe('מנה ארוכה')
+  })
+  it('מפורק — קפה קר זכוכית רגיל → מנה ארוכה', () => {
+    expect(getCorrectPortion({ category: 'cold', size: null, cup: 'זכוכית', strength: null, broken: true }))
+      .toBe('מנה ארוכה')
+  })
+  it('מפורק — הפוך רגיל פורצלן חלש → מנה ארוכה (לא חצי מנה)', () => {
+    expect(getCorrectPortion({ category: 'hot', size: 'רגיל', cup: 'פורצלן', strength: 'חלש', broken: true }))
+      .toBe('מנה ארוכה')
+  })
+
   // --- index clamping ---
   it('index לא יורד מתחת ל-0 (חצי מנה הוא הרצפה)', () => {
     expect(getCorrectPortion({ category: 'hot', size: 'רגיל', cup: 'פורצלן', strength: 'חלש' }))

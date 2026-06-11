@@ -1,7 +1,8 @@
 import { PORTIONS } from '../data/portionScale.js'
 import { DEFAULT_PORTION_INDEX } from '../data/coffeeTypes.js'
 
-export function getCorrectPortion({ category, size, cup, strength }) {
+export function getCorrectPortion({ category, size, cup, strength, broken }) {
+  if (broken) return PORTIONS[2] // מפורק תמיד = מנה ארוכה
   const key = `${category}|${size ?? 'null'}|${cup}`
   let index = DEFAULT_PORTION_INDEX[key]
   if (strength === 'חזק') index += 1
