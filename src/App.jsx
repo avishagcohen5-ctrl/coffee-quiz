@@ -21,6 +21,7 @@ export default function App() {
   return (
     <div className="app">
       <Bon order={order} />
+      <div className="spacer" />
       <div className="divider" />
       <AnswerButtons
         correctPortion={correctPortion}
