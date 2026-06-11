@@ -140,17 +140,11 @@ body {
   direction: rtl;
 }
 
-.scale-bars {
+.scale-cups {
   display: flex;
-  gap: 4px;
+  gap: 6px;
   flex-shrink: 0;
-}
-
-.scale-bar {
-  width: 8px;
-  height: 28px;
-  background: #111;
-  border-radius: 3px;
+  align-items: flex-end;
 }
 
 .scale-text {
@@ -173,6 +167,23 @@ body {
 
 .refresh-cta {
   margin-top: 36px;
+}
+
+/* ── Quiz refresh button ── */
+
+.quiz-refresh-btn {
+  background: none;
+  border: none;
+  color: #bbb;
+  font-size: 12px;
+  font-family: 'Heebo', sans-serif;
+  cursor: pointer;
+  text-align: left;
+  padding: 12px 16px 0;
+  display: block;
+  width: 100%;
+  direction: rtl;
+  text-align: right;
 }
 
 /* ── Bon ── */
