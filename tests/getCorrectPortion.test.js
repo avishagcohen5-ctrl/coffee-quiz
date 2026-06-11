@@ -25,19 +25,19 @@ describe('getCorrectPortion', () => {
     expect(getCorrectPortion({ category: 'hot', size: 'רגיל', cup: 'זכוכית', strength: 'חלש' }))
       .toBe('מנה קצרה')
   })
-  it('הפוך רגיל זכוכית — חזק → 2 מנות קצרות', () => {
+  it('הפוך רגיל זכוכית — חזק → כפול קצר', () => {
     expect(getCorrectPortion({ category: 'hot', size: 'רגיל', cup: 'זכוכית', strength: 'חזק' }))
-      .toBe('2 מנות קצרות')
+      .toBe('כפול קצר')
   })
 
   // --- hot, גדול, TA (default index 4) ---
-  it('הפוך גדול TA — רגיל → 2 מנות ארוכות', () => {
+  it('הפוך גדול TA — רגיל → כפול ארוך', () => {
     expect(getCorrectPortion({ category: 'hot', size: 'גדול', cup: 'TA', strength: null }))
-      .toBe('2 מנות ארוכות')
+      .toBe('כפול ארוך')
   })
-  it('הפוך גדול TA — חלש → 2 מנות קצרות', () => {
+  it('הפוך גדול TA — חלש → כפול קצר', () => {
     expect(getCorrectPortion({ category: 'hot', size: 'גדול', cup: 'TA', strength: 'חלש' }))
-      .toBe('2 מנות קצרות')
+      .toBe('כפול קצר')
   })
   it('הפוך גדול TA — חזק → 3 מנות ארוכות', () => {
     expect(getCorrectPortion({ category: 'hot', size: 'גדול', cup: 'TA', strength: 'חזק' }))
@@ -45,31 +45,31 @@ describe('getCorrectPortion', () => {
   })
 
   // --- cold, זכוכית (default index 3) ---
-  it('קפה קר זכוכית — רגיל → 2 מנות קצרות', () => {
+  it('קפה קר זכוכית — רגיל → כפול קצר', () => {
     expect(getCorrectPortion({ category: 'cold', size: null, cup: 'זכוכית', strength: null }))
-      .toBe('2 מנות קצרות')
+      .toBe('כפול קצר')
   })
   it('קפה קר זכוכית — חלש → מנה ארוכה', () => {
     expect(getCorrectPortion({ category: 'cold', size: null, cup: 'זכוכית', strength: 'חלש' }))
       .toBe('מנה ארוכה')
   })
-  it('קפה קר זכוכית — חזק → 2 מנות ארוכות', () => {
+  it('קפה קר זכוכית — חזק → כפול ארוך', () => {
     expect(getCorrectPortion({ category: 'cold', size: null, cup: 'זכוכית', strength: 'חזק' }))
-      .toBe('2 מנות ארוכות')
+      .toBe('כפול ארוך')
   })
 
   // --- cold, TA (default index 4) ---
-  it('קפה קר TA — רגיל → 2 מנות ארוכות', () => {
+  it('קפה קר TA — רגיל → כפול ארוך', () => {
     expect(getCorrectPortion({ category: 'cold', size: null, cup: 'TA', strength: null }))
-      .toBe('2 מנות ארוכות')
+      .toBe('כפול ארוך')
   })
   it('קפה קר TA — חזק → 3 מנות ארוכות', () => {
     expect(getCorrectPortion({ category: 'cold', size: null, cup: 'TA', strength: 'חזק' }))
       .toBe('3 מנות ארוכות')
   })
-  it('קפה קר TA — חלש → 2 מנות קצרות', () => {
+  it('קפה קר TA — חלש → כפול קצר', () => {
     expect(getCorrectPortion({ category: 'cold', size: null, cup: 'TA', strength: 'חלש' }))
-      .toBe('2 מנות קצרות')
+      .toBe('כפול קצר')
   })
 
   // --- מפורק תמיד מנה ארוכה ---
