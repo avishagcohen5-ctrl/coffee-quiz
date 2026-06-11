@@ -12,9 +12,6 @@ body {
   text-align: right;
   background: #e8e3dc;
   min-height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
 }
 
 .app {
@@ -24,6 +21,7 @@ body {
   background: #fff;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 /* ── Home Screen ── */
