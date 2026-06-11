@@ -169,19 +169,27 @@ body {
 
 /* ── Quiz refresh button ── */
 
+.quiz-bottom {
+  padding: 12px 16px 28px;
+  background: #faf8f5;
+}
+
 .quiz-refresh-btn {
-  background: none;
-  border: 1.5px solid #e0d8d0;
-  border-radius: 20px;
-  color: #888;
-  font-size: 13px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 14px;
+  font-size: 17px;
   font-family: 'Heebo', sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   cursor: pointer;
-  padding: 6px 14px;
-  display: block;
-  margin: 14px 16px 0 auto;
-  direction: rtl;
+  border: none;
+  background: #f0ede8;
+  color: #555;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.quiz-refresh-btn:active {
+  transform: scale(0.97);
 }
 
 /* ── Bon ── */

@@ -45,9 +45,6 @@ export default function App() {
 
   return (
     <div className="app">
-      <button className="quiz-refresh-btn" onClick={() => setScreen('refresh')}>
-        רענן זיכרון
-      </button>
       <Bon order={order} />
       <div className="spacer" />
       <div className="divider" />
@@ -56,6 +53,11 @@ export default function App() {
         answered={answered}
         onAnswer={handleAnswer}
       />
+      <div className="quiz-bottom">
+        <button className="quiz-refresh-btn" onClick={() => setScreen('refresh')}>
+          רענן זיכרון
+        </button>
+      </div>
     </div>
   )
 }
